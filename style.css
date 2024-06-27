@@ -1,0 +1,268 @@
+/* Reset and base styles */
+body {
+    /* background-color: rgb(240, 25, 255); */
+    background-color: rgb(200, 169, 103);
+    color: rgb(0, 0, 0); /* Black text color */
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #1a1a1a; /* Dark background color for header */
+    padding: 10px 20px;
+}
+
+.container {
+    padding: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    color: rgb(200, 169, 103); /* Pink text color */
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-right: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: rgb(255, 11, 218); /* Pink text color on hover */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+.social-icon {
+    margin-left: 15px;
+}
+
+.social-icon img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.text-animation {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-animation span {
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    display: inline-block;
+    white-space: wrap;
+    font-size: 24px;
+    text-align: right;
+}
+
+.cat2 {
+    width: 100%; /* Adjust the width of the image */
+    max-width: 100%; /* Ensures image doesn't exceed its original size */
+    overflow: hidden;
+    border-radius: 50%; /* Rounds the corners of the image */
+    position: relative; /* Ensure relative positioning for pseudo-elements */
+}
+
+.cat2::before,
+.cat2::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    width: 10%;
+    z-index: -1;
+}
+
+.cat2::before {
+    left: -5%;
+    transform: skewX(-15deg);
+}
+
+.cat2::after {
+    right: -5%;
+    transform: skewX(15deg);
+}
+
+.introduction {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    width: 100%; /* Adjust width of the content */
+    text-align: left; /* Aligns text to the left */
+    padding: 20px; /* Adds padding for spacing */
+}
+
+.intropara {
+    font-weight: 500;
+}
+
+.anotherInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.coinspart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center align text on smaller screens */
+    font-size: larger;
+    font-weight: 500;
+}
+
+.coinspart img {
+    max-width: 100%; /* Ensure image responsiveness */
+    height: auto;
+}
+
+.catimage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    text-align: center; /* Center align text on smaller screens */
+}
+
+.catimage img {
+    max-width: 100%; /* Ensure image responsiveness */
+    height: auto;
+}
+
+.text-animation .comingsoon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 100px;
+    text-align: center;
+}
+
+.scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    animation: moveText 10s linear infinite;
+}
+
+.moving{
+    font-size: xx-large;
+    padding-top: 30px;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+    }
+
+    .navbar nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-animation {
+        width: 80%;
+        text-align: center;
+    }
+
+    .cat2 {
+        width: 80%;
+    }
+
+    .coinspart {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center align text on small screens */
+    }
+
+    .catimage {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center; /* Center align text on small screens */
+    }
+
+    .text-animation .comingsoon {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+}
