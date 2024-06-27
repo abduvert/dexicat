@@ -14,7 +14,11 @@ header {
 }
 
 .container {
-    padding: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar {
@@ -196,14 +200,21 @@ header {
     position: relative;
 }
 
-.scrolling-text span {
-    display: inline-block;
-    animation: moveText 10s linear infinite;
-}
 
 .moving{
     font-size: xx-large;
     padding-top: 30px;
+}
+
+.scrolling-text {
+    white-space: nowrap; /* Ensures text doesn't wrap */
+    overflow: hidden; /* Hides overflow */
+    position: relative; /* Positioning context for absolute positioning */
+}
+
+.scrolling-text span {
+    display: inline-block; /* Display as inline block for animation */
+    animation: moveText 10s linear infinite; /* Animation properties */
 }
 
 @keyframes moveText {
@@ -215,8 +226,12 @@ header {
     }
 }
 
+
 /* Media Query for Responsive Design */
 @media (max-width: 768px) {
+    
+
+
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -241,11 +256,23 @@ header {
     .row {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
     .text-animation {
         width: 80%;
         text-align: center;
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+        justify-content: center
+    }
+    .text-animation span{
+        width: 80%;
+        text-align: center;
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center;
+        justify-content: center
     }
 
     .cat2 {
@@ -255,6 +282,8 @@ header {
     .coinspart {
         flex-direction: column; /* Stack items vertically on small screens */
         text-align: center; /* Center align text on small screens */
+        align-items: center;
+        justify-content: center;
     }
 
     .catimage {
@@ -264,5 +293,9 @@ header {
 
     .text-animation .comingsoon {
         font-size: 30px; /* Adjust font size for smaller screens */
+    }
+
+    .scrolling-text {
+        display: none;
     }
 }
